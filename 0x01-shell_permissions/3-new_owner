@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo chown -R betty file
+chown -R betty file
