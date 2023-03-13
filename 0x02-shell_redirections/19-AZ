@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "$1" | rev
+'^[a-zA-Z]' /etc/ssh/sshd_config
