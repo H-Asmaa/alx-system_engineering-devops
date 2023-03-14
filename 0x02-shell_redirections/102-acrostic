@@ -1,2 +1,2 @@
 #!/bin/bash
-for word in $(cut -c1 message.txt); do echo -n $(grep "^$word" words.txt | cut -d' ' -f2); done; echo
+echo $(cut -c1 |tr -d "\n")
