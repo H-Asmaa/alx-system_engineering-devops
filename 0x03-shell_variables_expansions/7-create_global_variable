@@ -1,2 +1,2 @@
 #!/bin/bash
-BEST="School" | export BEST
+bash 6-create_local_variable
