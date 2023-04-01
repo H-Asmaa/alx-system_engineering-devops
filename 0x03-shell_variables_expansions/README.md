@@ -1,1 +1,1 @@
-Readme file init file
+This is readme for shell variable expansions
