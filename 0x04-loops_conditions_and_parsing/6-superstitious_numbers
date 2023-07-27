@@ -9,15 +9,19 @@ do
 	case $counter in
 		4)
 			echo "$counter"
-			echo "bad luck from China";;
+			echo "bad luck from China"
+			;;
 		9)
 			echo "$counter"
-			echo "bad luck from japan";;
+			echo "bad luck from japan"
+			;;
 		17)
 			echo "$counter"
-			echo "bad luck from Italy";;
+			echo "bad luck from Italy"
+			;;
 		*)
 			echo "$counter"
+			;;
 	esac
 	((counter++))
 done
