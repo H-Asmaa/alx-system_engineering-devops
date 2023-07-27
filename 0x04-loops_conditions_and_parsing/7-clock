@@ -9,10 +9,12 @@ while [ $counter -le 59 ]
 do
 	if [ $counter -eq 59 ];then
 		echo "$counter"
-		echo "Hour: $hour"
+		if [ $hour -ne 13 ];then
+			echo "Hour: $hour"
+		fi
 		counter=0
 		((hour++))
-		if [ $hour -eq 13 ];then
+		if [ $hour -eq 14 ];then
 			break
 		fi
 	else
