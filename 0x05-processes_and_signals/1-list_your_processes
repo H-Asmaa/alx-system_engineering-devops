@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 # A script that displays all the currently running processes.
+# EXPLANATION :
+	# -a : all processes, to show all info about all processes running pn the system
+	# -u : user-oriented-format, to provide  detailed informations about the processes
+	# -x : processes without a controlling terminal, to include processes that are not associated with any terminal.
+	# -f : full format, full listing of the process hierarchy.
 ps -auxf
