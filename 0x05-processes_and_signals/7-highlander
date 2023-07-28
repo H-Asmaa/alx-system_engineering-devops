@@ -1,0 +1,18 @@
+##!/usr/bin/env bash
+#  a Bash script that displays:
+	# To infinity and beyond indefinitely
+	# With a sleep 2 in between each iteration
+	# I am invincible!!! when receiving a SIGTERM signal
+control_file=/tmp/7-highlander
+sign() {
+	echo "I am invincible!!!"
+}
+trap sign SIGTERM
+while true;
+do
+	echo "To infinity and beyond"
+	sleep 2
+	if [ -f "$control_file" ];then
+		sign
+	fi
+done
