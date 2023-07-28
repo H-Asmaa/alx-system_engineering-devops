@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # A Bash script that stops 4-to_infinity_and_beyond process without kill or killall.
-pkill -f 7-highlander
+control_file=/tmp/7-highlander-control
+touch "$control_file"

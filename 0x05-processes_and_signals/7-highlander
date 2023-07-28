@@ -3,7 +3,7 @@
 	# To infinity and beyond indefinitely
 	# With a sleep 2 in between each iteration
 	# I am invincible!!! when receiving a SIGTERM signal
-control_file=/tmp/7-highlander
+control_file=/tmp/7-highlander-control
 sign() {
 	echo "I am invincible!!!"
 }
