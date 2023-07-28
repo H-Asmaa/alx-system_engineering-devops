@@ -4,24 +4,14 @@
 	# In a list format
 	# Where only the part of the name after the first dash is displayed
 # EXPLANATION :
-	# read : Used to read input.
-	# -d : To read input untill reaching the specified delimiter.
-			# set to empty string meaning to read everything.
-	# -ra : stores the input into an array named file.
-			# -a to store in an array
-			# -r to prevent the interpretation of backslashes.
-	# @ : to expand all elements of an array.
-	# # : to remove a prefix pattern from a value.
-	# *- : matching the pattern of everything up to the first dash.
-	# -e : To anable the interpretation of the special characters ex: "\n"...
-# INTERESTING CODE :
-			# modified_string=$(ls | tr -d '[:digit:]-')
-			# echo "$modified_string\n"
-		# '[:digit:]-' : to remove all occurences of digits and dashes.
-					# [:digit:] is a character class representing all digits.
-read -d '' -ra filenames <<< "$(ls)"
-modified_string=""
-for filename in "${filenames[@]}"; do
-	modified_string+="${filename#*-}\n"
+	# There two types of constructs for conditional expressions.
+		# [] : Traditional test command, used for basic conditional checks
+		 		# such as -eq,-ne, -gt ...
+		# [[]] : extended conditional construct, offers more features and capabilities
+				# such as logical operations, reggular expressions (==, !=...)
+for file in *;do
+	if [[ -f "$file" && "$file" != .* ]];then
+		output=${file#*-}
+		echo "$output"
+	fi
 done
-echo -e "$modified_string"
