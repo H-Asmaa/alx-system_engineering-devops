@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 sender = ARGV[0].scan(/(?<=from:)\s*([^\]]*?)(?=\])/)
-sender = ARGV[0].scan(/(?<=from:)\s*([^\]]*?)(?=\])/)
-sender = ARGV[0].scan(/(?<=from:)\s*([^\]]*?)(?=\])/)
-puts sender.join
+receiver = ARGV[0].scan(/(?<=to:)\s*([^\]]*?)(?=\])/)
+flags = ARGV[0].scan(/(?<=flags:)\s*([^\]]*?)(?=\])/)
+puts "#{sender.join},#{receiver.join},#{flags.join}"
