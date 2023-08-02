@@ -6,8 +6,9 @@
 # Explanation :
 	# -z : checks if a given string is empty
 	# $1 : refers to the first given argument
+	# -c : refers to the number of ICMP pings to send to the target in thus case set to 5.
 if [ -z "$1" ];then
 	echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
 else
-	ping "$1"
+	ping -c 5 "$1"
 fi
