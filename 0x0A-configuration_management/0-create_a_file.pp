@@ -1,7 +1,7 @@
 # Creation of a file with permissions
 file { '/tmp/school':
   ensure  => file,
-  mode    => '/tmp/school',
+  path    => '/tmp/school',
   mode    => '0744',
   owner   => 'www-data',
   group   => 'www-data',
