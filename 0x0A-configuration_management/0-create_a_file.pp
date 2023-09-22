@@ -1,11 +1,13 @@
 exec { 'fileCreation':
-  command => 'echo "I love Puppet" > /tmp/school'
+  command => '/bin/echo "I love Puppet" > /tmp/school',
 }
+
 exec { 'grantPermission':
-  command => 'chmod 744 school'
-  require => Exec['fileCreation']
+  command => '/bin/chmod 744 /tmp/school',
+  require => Exec['fileCreation'],
 }
+
 exec { 'ownerGroupSetUp':
-  command => 'chown www-data:www-data school /tmp/school'
-  require => Exec['grantPermission']
+  command => '/bin/chown www-data:www-data /tmp/school',
+  require => Exec['grantPermission'],
 }
