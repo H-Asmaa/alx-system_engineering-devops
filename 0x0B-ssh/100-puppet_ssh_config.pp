@@ -1,12 +1,14 @@
 # Puppet configuration script
-file_line { '/etc/ssh/ssh_config':
+file_line { 'PasswordAuthentification':
   ensure => present,
+  path   => '/etc/ssh/ssh_config'
   line   => 'PasswordAuthentification no',
   match  => '^#?PasswordAuthentification'
   mode   => '0600'
 }
-file_line { '~/.ssh/school':
+file_line { 'IdentityFile':
   ensure => present,
+  path   => '/etc/ssh/ssh_config'
   line   => 'IdentityFile ~/.ssh/school',
   match  => '^#?IdentityFile'
 }
