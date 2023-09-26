@@ -2,5 +2,5 @@
 # A Bash script that configures a new Ubuntu machine.
 apt-get update
 apt-get install nginx
-echo "Hello World" | tee /var/www/html/index.html
+echo "Hello World!" | tee /var/www/html/index.html
 service nginx restart
