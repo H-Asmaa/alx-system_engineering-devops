@@ -1,0 +1,14 @@
+Copy code
+#!/usr/bin/env bash
+# A script that configures the server using a redirection file
+echo "server {
+    listen 80;
+    server_name _; # Catch all server_name
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    }
+}" > /etc/nginx/sites-available/redirect_me
+sudo ln -s /etc/nginx/sites-available/redirect_me /etc/nginx/sites-enabled/
+rm -f /etc/nginx/sites-enabled/default
+sudo nginx -t
+service nginx reload
