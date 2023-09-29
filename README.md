@@ -1,1 +1,34 @@
-The readme file for the  shell basics project
+# ALX SYSTEM ENGINEERING DEVOPS
+## System engineering & DevOps - Bash
+### 0x00. Shell, basics [Mar 8 23...Mar 9 23]
+### 0x01. Shell, permissions [Mar 9 23...Mar 10 23]
+### 0x02. Shell, I/O Redirections and filters [Mar 13 23...Mar 14 23]
+### 0x03. Shell, init files, variables and expansions [Mar 14 23...Mar 15 23]
+### 0x04. Loops, conditions and parsing [Jul 27 23...Jul 28 23]
+### 0x05. Processes and signals [Jul 28 23...Jul 29 23]
+****
+## System engineering & DevOps - Scripting
+### 0x06. Regular expression [Aug 1 23...Aug 2 23]
+****
+## System engineering & DevOps - Networking
+### 0x07. Networking basics #0 [Aug 2 23...Aug 4 23]
+### 0x08. Networking basics #1 [Aug 2 23...Aug 4 23]
+****
+## System engineering & DevOps - Web stack
+### 0x09. Web infrastructure design [Aug 24 23...Aug 28 23]
+A blog on that written on Medium and hashnode:
+- Medium: [https://medium.com/@asmaehadar32/web-infrastructure-design-fb123a53cb05]
+- Hashnode:  [https://bytebites.hashnode.dev/web-infrastructure-design]
+### 0x0C. Web server [Sep 25 23...Sep 27 23]
+****
+## System engineering & DevOps - Security
+### 0x0B. SSH [Sep 22 23...Sep 25 23]
+A blog on that written on Medium and Hashnode
+- Medium: [https://medium.com/@asmaehadar32/concepts-about-the-ssh-connection-a480dc532784]
+- Hashnode: [https://bytebites.hashnode.dev/concepts-about-the-ssh-connection]
+****
+## System engineering & DevOps - CI/CD
+### 0x0A. Configuration management [Sep 22 23...Sep 23 23]
+****
+## System engineering & DevOps - Web stack debugging
+### 0x0D. Web stack debugging #0 [Sep 25 23...Sep 27 23]
