@@ -15,7 +15,7 @@
 ### 0x08. Networking basics #1 [Aug 2 23...Aug 4 23]
 ****
 ## System engineering & DevOps - Web stack
-### 0x09. Web infrastructure design [Aug 24 23...Aug 28 23]
+### 0x09. Web infrastructure design [Aug 24 23...Aug 28 23](0x09-web_infrastructure_design)
 A blog on that written on Medium and hashnode:
 - Medium: [https://medium.com/@asmaehadar32/web-infrastructure-design-fb123a53cb05]
 - Hashnode:  [https://bytebites.hashnode.dev/web-infrastructure-design]
