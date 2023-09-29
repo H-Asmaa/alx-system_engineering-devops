@@ -17,15 +17,15 @@
 ## System engineering & DevOps - Web stack
 ### [0x09. Web infrastructure design](0x09-web_infrastructure_design) [Aug 24 23...Aug 28 23]
 A blog on that written on Medium and hashnode:
-- Medium: [https://medium.com/@asmaehadar32/web-infrastructure-design-fb123a53cb05]
-- Hashnode:  [https://bytebites.hashnode.dev/web-infrastructure-design]
+- [ON MEDIUM](https://medium.com/@asmaehadar32/web-infrastructure-design-fb123a53cb05)
+- [ON HASHNODE](https://bytebites.hashnode.dev/web-infrastructure-design)
 ### [0x0C. Web server](0x0C-web_server) [Sep 25 23...Sep 27 23]
 ****
 ## System engineering & DevOps - Security
 ### [0x0B. SSH](0x0B-ssh) [Sep 22 23...Sep 25 23]
 A blog on that written on Medium and Hashnode
-- Medium: [https://medium.com/@asmaehadar32/concepts-about-the-ssh-connection-a480dc532784]
-- Hashnode: [https://bytebites.hashnode.dev/concepts-about-the-ssh-connection]
+- [ON MEDIUM](https://medium.com/@asmaehadar32/concepts-about-the-ssh-connection-a480dc532784)
+- [ON HASHNODE](https://bytebites.hashnode.dev/concepts-about-the-ssh-connection)
 ****
 ## System engineering & DevOps - CI/CD
 ### [0x0A. Configuration management](0x0A-configuration_management) [Sep 22 23...Sep 23 23]
