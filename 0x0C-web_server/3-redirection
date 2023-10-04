@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 # A script that configures the server using a redirection file
+apt-get update -y
+apt-get install nginx -y
 echo "server {
     listen 80;
-    ubuntu 54.237.110.68;
+    server_name _;
     location /redirect_me {
         return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
     }
-}" > /etc/nginx/sites-available/redirect_me
-sudo ln -s /etc/nginx/sites-available/redirect_me /etc/nginx/sites-enabled/
-rm -f /etc/nginx/sites-enabled/default
-sudo nginx -t
-service nginx reload
+}" > /etc/nginx/sites-available/redirect
+ln -s /etc/nginx/sites-available/redirect /etc/nginx/sites-enabled/
+nginx -t
+systemctl restart nginx
