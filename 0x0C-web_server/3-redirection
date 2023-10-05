@@ -3,6 +3,7 @@
 apt-get update -y
 apt-get install nginx -y
 echo "Hello World!" > /var/www/html/index.html
-sudo sed -i 's/server_name _;/&\n\tlocation \/redirect_me {\n\t\treturn 301 https:\/\/github.com\/H-Asmaa;\n\t}\n/' /etc/nginx/sites-enabled/default
+new_string="\n\tlocation /redirect_me {\n\t\treturn 301 https://github.com/H-Asmaa;\n\t}\n"
+sed -i "s#server_name _;#${new_string}#" /etc/nginx/sites-enabled/default
 nginx -t
 systemctl restart nginx
