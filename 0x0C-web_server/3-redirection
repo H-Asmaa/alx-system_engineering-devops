@@ -2,6 +2,7 @@
 # A script that configures the server using a redirection file
 apt-get update -y
 apt-get install nginx -y
-sudo sed -i "46i rewrite /redirect_me https://intranet.alxswe.com/ permanent;" /etc/nginx/sites-available/default
+echo "Hello World!" > /var/www/html/index.html
+sudo sed -i "s/server_name _;/server_name _;\n\trewrite ^\/redirect_me https:\/\/intranet.alxswe.com\/ permanent;/" /etc/nginx/sites-enabled/default
 nginx -t
 systemctl restart nginx
