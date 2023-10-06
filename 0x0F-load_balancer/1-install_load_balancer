@@ -6,8 +6,7 @@ sudo systemctl start haproxy
 sudo systemctl enable haproxy
 sed -i '$a\
 \tfrontend my_frontend\
-\t\tbind *:80\
-\t\tmode http\
+\t\tbind 0:80
 \t\tdefault_backend my_backend\
 \
 \tbackend my_backend\
