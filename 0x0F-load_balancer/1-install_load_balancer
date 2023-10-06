@@ -1,17 +1,15 @@
 #!/usr/bin/env bash
 # A script that configures the load balancer.
-sudo apt -y update
-sudo apt -y install haproxy
-sudo systemctl start haproxy
-sudo systemctl enable haproxy
-sed -i '$a\
-\tfrontend my_frontend\
-\t\tbind 0:80
-\t\tdefault_backend my_backend\
-\
-\tbackend my_backend\
-\t\tbalance roundrobin\
-\t\tserver 376576-web-01 18.207.139.124:80 check\
-\t\tserver 376576-web-02 54.236.45.101:80 check\
-' /etc/haproxy/haproxy.cfg
-sudo systemctl restart haproxy
+apt-get -y update
+apt-get install haproxy -y
+echo '
+frontend my_frontend
+        bind 0:80
+        default_backend web_servers
+
+backend my_backend
+        balance roundrobin
+        server 376576-web-01 18.207.139.124:80
+        server 376576-web-02 54.236.45.101:80
+' >> /etc/haproxy/haproxy.cfg
+service haproxy restart
