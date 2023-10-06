@@ -5,7 +5,7 @@ apt-get install haproxy -y
 echo '
 frontend my_frontend
         bind 0:80
-        default_backend web_servers
+        default_backend my_backend
 
 backend my_backend
         balance roundrobin
