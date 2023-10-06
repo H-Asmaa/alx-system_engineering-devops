@@ -5,8 +5,9 @@ sudo apt-get -y install nginx
 sudo service nginx start
 ufw allow  'Nginx HTTP'
 echo 'Hello World!' > /var/www/html/index.nginx-debian.html
-sudo sed -i "46i rewrite ^/redirect_me https://intranet.alxswe.com/ permanent;" /etc/nginx/sites-available/default
-echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
-sudo sed -i "46i error_page 404 /custom_404.html;" /etc/nginx/sites-available/default
-sudo sed -i "/server_name _;/ a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
+String="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/H-Asmaa permanent;"
+sudo sed -i "s/server_name _;/$String/" /etc/nginx/sites-enabled/default
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/custom_404.html > /dev/null
+sudo sed -i "s/server_name _;/&\n\terror_page 404 \/custom_404.html;/" /etc/nginx/sites-enabled/default
+sudo sed -i "/server_name _;/ a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-enabled/default
 sudo service nginx restart
