@@ -3,11 +3,11 @@
 apt-get -y update
 apt-get install haproxy -y
 echo '
-frontend my_frontend
+frontend abeludoh.tech
         bind 0:80
-        default_backend my_backend
+        default_backend web_servers
 
-backend my_backend
+backend web_servers
         balance roundrobin
         server 376576-web-01 18.207.139.124:80
         server 376576-web-02 54.236.45.101:80
