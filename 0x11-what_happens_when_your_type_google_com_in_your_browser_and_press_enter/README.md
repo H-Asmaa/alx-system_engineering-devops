@@ -1,4 +1,4 @@
-# 0x11-what_happens_when_your_type_google_com_in_your_browser_and_press_enter
+# what_happens_when_your_type_google_com_in_your_browser_and_press_enter
 
 ## TABLE OF CONTENT
 - [Introduction](#Introduction)
@@ -31,7 +31,7 @@ In order to get the requested page https://www.google.com, The client has to est
 It is employed to secure the connection between the client and server.
 ### HTTPS/SSL <a name="HTTPS"></a>
 Google.com uses the secure HTTPS protocol, certified by SSL, to protect data during transmission.
-### Load Balancer <a name="Balancer"></a>
+### Load Balancer
 Google utilizes load balancers to distribute the overwhelming volume of requests efficiently among its servers.
 ### Web Server <a name="WebServer"></a>
 The client's request reaches Google's web server, the Google Web Server (GWS), which handles the requests.
@@ -40,4 +40,4 @@ For requests that require specific logical analysis, an application server comes
 ### Database <a name="Database"></a>
 It is pivotal for retrieving various data.
 
-This journey happens seamlessly, and these elements work together to provide us with the famous search engine we all know.
+##### This journey happens seamlessly, and these elements work together to provide us with the famous search engine we all know.
