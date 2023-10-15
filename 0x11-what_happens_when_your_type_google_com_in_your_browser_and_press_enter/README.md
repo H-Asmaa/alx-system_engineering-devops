@@ -66,4 +66,4 @@ For requests that require specific logical analysis, an application server comes
 
 It is pivotal for retrieving various data.
 
-##### This journey happens seamlessly, and these elements work together to provide us with the famous search engine we all know.
+**This journey happens seamlessly, and these elements work together to provide us with the famous search engine we all know.**
