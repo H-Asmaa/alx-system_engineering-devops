@@ -2,4 +2,4 @@
 # A script that configures nginx on a container.
 sudo apt-get install nginx
 sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
-sudo service nginx reload
+sudo service nginx restart
