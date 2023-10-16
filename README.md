@@ -31,4 +31,5 @@ A blog on that written on Medium and Hashnode
 ### [0x0A. Configuration management](0x0A-configuration_management) [Sep 22 23...Sep 23 23]
 ****
 ## System engineering & DevOps - Web stack debugging
-### [0x0D. Web stack debugging #0]() [Sep 25 23...Sep 27 23]
+### [0x0D. Web stack debugging #0](0x0D-web_stack_debugging_0) [Sep 25 23...Sep 27 23]
+### [0x0E. Web stack debugging #1](0x0E-web_stack_debugging_1) [Oct 2 23...Oct 6 23]
