@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# A configuration script made short.
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+sudo service nginx restart
