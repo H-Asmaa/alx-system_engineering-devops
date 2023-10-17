@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # A script that is running as nginx user and configuring nginx to listen on all the active IPs on port 8080.
-sudo su nginx
+sudo sed -i 's/user\s*[^;]/user nginx;/' /etc/nginx/nginx.conf
 sudo sed -i 's/Listen 80;/Listen *:8080;' /etc/nginx/nginx.conf
-sudo systemctl restart nginx
+sudo -u nginx service nginx start
