@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # A script that is running as nginx user and configuring nginx to listen on all the active IPs on port 8080.
 chmod 644 /etc/nginx/nginx.conf
-sed -Ei 's/user .*/user nginx;/' /etc/nginx/nginx.conf
-sed -Ei 's/listen 80;/listen 8080;/' /etc/nginx/sites-enabled/default
+sed -Ei 's/\s*#?\s*user .*/user nginx;/' /etc/nginx/nginx.conf
+sed -Ei 's/(listen (\[::\]:)?80) /\180 /' /etc/nginx/sites-enabled/default
 pkill apache2
 su nginx -s /bin/bash -c 'service nginx restart'
