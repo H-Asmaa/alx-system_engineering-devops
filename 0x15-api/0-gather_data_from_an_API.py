@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-A script that returns info about an employe using
-a REST API
+Retrieves employee info using a REST API
 """
 if __name__ == "__main__":
     import json
