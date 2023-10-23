@@ -25,7 +25,7 @@ if __name__ == "__main__":
                 TASK_TITLE += "\t"
                 TASK_TITLE += f"{dictionary['title']}"
     print(
-        "Employee {} is done with tasks({}/{})".format(
+        "Employee {} is done with tasks({}/{}):".format(
             EMPLOYEE_NAME, NUMBER_OF_DONE_TASKS, TOTAL_NUMBER_OF_TASKS
         )
     )
