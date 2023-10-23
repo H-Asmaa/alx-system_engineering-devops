@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-exports employee info to csv
+exports todos of all employees info to json
 """
 if __name__ == "__main__":
     import json
@@ -14,7 +14,7 @@ if __name__ == "__main__":
         requestTasks = requests.get(
             f"https://jsonplaceholder.typicode.com/todos/?userId={userId}"
         )
-        with open("all.json", "w", encoding="UTF-8") as file:
+        with open("todo_all_employees.json", "w", encoding="UTF-8") as file:
             data[userId] = [
                     {
                         "username": username,
