@@ -21,7 +21,7 @@ if __name__ == "__main__":
                 {
                     "task": dictionary.get("title"),
                     "completed": dictionary.get("completed"),
-                    "username": dictionary.get("username"),
+                    "username": USERNAME,
                 }
                 for dictionary in requestTasks.json()
             ]
