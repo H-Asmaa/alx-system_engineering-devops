@@ -22,5 +22,5 @@ if __name__ == "__main__":
             }
             for dictionary in requestTasks.json()
         ]
-        with open("todo_all_employees.json", "w", encoding="UTF-8") as file:
-            file.write(json.dumps(data))
+    with open("todo_all_employees.json", "w", encoding="UTF-8") as file:
+        file.write(json.dumps(data))
