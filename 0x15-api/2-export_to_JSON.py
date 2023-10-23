@@ -19,9 +19,9 @@ if __name__ == "__main__":
         data = {
             str(USER_ID): [
                 {
-                    "task": str(dictionary.get("title")),
-                    "completed": str(dictionary.get("completed")),
-                    "username": str(dictionary.get("userId")),
+                    "task": dictionary.get("title"),
+                    "completed": dictionary.get("completed"),
+                    "username": dictionary.get("userId"),
                 }
                 for dictionary in requestTasks.json()
             ]
