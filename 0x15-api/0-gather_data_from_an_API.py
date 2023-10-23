@@ -21,7 +21,7 @@ if __name__ == "__main__":
             if key == "completed" and val is True:
                 NUMBER_OF_DONE_TASKS += 1
                 TASK_TITLE += "\n"
-                TASK_TITLE += "\t"
+                TASK_TITLE += "\t "
                 TASK_TITLE += f"{dictionary['title']}"
     print(
         "Employee {} is done with tasks({}/{}):".format(
