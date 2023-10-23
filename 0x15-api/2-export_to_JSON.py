@@ -3,7 +3,6 @@
 exports employee info to csv
 """
 if __name__ == "__main__":
-    import csv
     import json
     import requests
     from sys import argv
