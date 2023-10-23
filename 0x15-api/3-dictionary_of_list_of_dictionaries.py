@@ -14,13 +14,13 @@ if __name__ == "__main__":
         requestTasks = requests.get(
             f"https://jsonplaceholder.typicode.com/todos/?userId={userId}"
         )
+        data[userId] = [
+            {
+                "username": username,
+                "task": dictionary.get("title"),
+                "completed": dictionary.get("completed"),
+            }
+            for dictionary in requestTasks.json()
+        ]
         with open("todo_all_employees.json", "w", encoding="UTF-8") as file:
-            data[userId] = [
-                    {
-                        "username": username,
-                        "task": dictionary.get("title"),
-                        "completed": dictionary.get("completed"),
-                    }
-                    for dictionary in requestTasks.json()
-                ]
             file.write(json.dumps(data))
