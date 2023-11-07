@@ -2,6 +2,7 @@
 """
 0x16. API advanced
 """
+
 import requests
 
 
