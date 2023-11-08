@@ -6,22 +6,29 @@
 import requests
 
 
-def recurse(subreddit, hot_list=[], after=None):
-    """A recursive function that returns a list of all hot
-    post's titles for a given subreddit."""
-    params = {"after": after} if after else {}
-    response = requests.get(
-        "https://reddit.com/r/{}/hot.json".format(subreddit),
-        headers={"User-Agent": "custom"},
-        params=params,
-    )
-    if response.status_code == 200:
-        if "children" in response.json()["data"]:
+def recurse(subreddit):
+    """The main function that is used to call the helper."""
+    hot_list = []
+
+    def recurse_helper(subreddit, after=None):
+        """A recursive function that returns a list of all hot
+        post's titles for a given subreddit."""
+        nonlocal hot_list
+        params = {"after": after} if after else {}
+        response = requests.get(
+            "https://reddit.com/r/{}/hot.json".format(subreddit),
+            headers={"User-Agent": "custom"},
+            params=params,
+            allow_redirects=False
+        )
+        if response.status_code == 200:
             for item in response.json()["data"]["children"]:
                 hot_list.append(item["data"]["title"])
             after = response.json()["data"]["after"]
-            return recurse(subreddit, hot_list, after) if after else hot_list
+            if after:
+                recurse_helper(subreddit, after)
         else:
             return None
-    else:
-        return None
+
+    recurse_helper(subreddit)
+    return hot_list if hot_list else None
