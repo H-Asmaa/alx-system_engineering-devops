@@ -27,9 +27,14 @@ def count_words(subreddit, word_list, dictionary={}, after=None):
                 for word in word_list:
                     if word.lower() in item["data"]["title"].lower():
                         title = item["data"]["title"].lower()
+                        """dictionary[word] += 1 if word in dictionary else 1
+                        can't use this, you can't access a value
+                        that is not in the dictionary. Use get instead."""
                         dictionary[word.lower()] = dictionary.get(
                             word.lower(), 0
                             ) + 1
+                        """This line sets the key to 0 if it doesn't
+                        exist, then it increments it by 1."""
             if data["after"]:
                 return count_words(
                     subreddit, word_list, dictionary, after=data["after"]
@@ -41,8 +46,3 @@ def count_words(subreddit, word_list, dictionary={}, after=None):
                 )
                 for key, val in sortedDict.items():
                     print("{}: {}".format(key, val))
-    elif response.status_code == 429:
-        print("Blati ra l9adiya mamslkach db!")
-    else:
-        print(f"Error {response.status_code}")
-        return None
