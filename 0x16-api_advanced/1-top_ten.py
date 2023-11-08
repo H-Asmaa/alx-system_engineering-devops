@@ -1,20 +1,18 @@
 #!/usr/bin/python3
 """
-0x16. API advanced
+API ADVANCED
 """
 
 import requests
 
 
 def top_ten(subreddit):
-    """A function function that queries the Reddit API and prints the
-    titles of the first 10 hot posts listed for a given subreddit."""
-    url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
     response = requests.get(
-        url, headers={"User-Agent": "custom"}, params={"Max-Results": 10}
-    )
+        "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit),
+        headers={"User-Agent": "costum"}
+        )
     if response.status_code == 200:
-        for data in response.json()["data"]["children"]:
-            print(data["data"]["title"])
+        for item in response.json()["data"]["children"]:
+            print(item["data"]["title"])
     else:
         print(None)
