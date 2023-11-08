@@ -12,12 +12,13 @@ def count_words(subreddit, word_list, dictionary={}, after=None):
     a sorted count of given keywords (case-insensitive,
     delimited by spaces."""
     if not subreddit or not isinstance(subreddit, str):
-        return None
+        print()
     params = {"after": after} if after else {}
     response = requests.get(
         "https://www.reddit.com/r/{}/hot.json".format(subreddit),
         headers={"User-Agent": "costum"},
         params=params,
+        allow_redirects=False
     )
     if response.status_code == 200:
         if response.json()["data"]:
@@ -45,7 +46,6 @@ def count_words(subreddit, word_list, dictionary={}, after=None):
                 )
                 for key, val in sortedDict.items():
                     print("{}: {}".format(key, val))
-                return sortedDict
     elif response.status_code == 429:
         print("Blati ra l9adiya mamslkach db!")
     else:
