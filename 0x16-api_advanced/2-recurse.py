@@ -16,11 +16,12 @@ def recurse(subreddit, hot_list=[], after=None):
         params=params,
     )
     if response.status_code == 200:
-        for item in response.json()["data"]["children"]:
-            hot_list.append(item["data"]["title"])
-        after = response.json()["data"]["after"]
-        return (
-            recurse(subreddit, hot_list, after) if after else hot_list
-        )
+        if "children" in response.json()["data"]:
+            for item in response.json()["data"]["children"]:
+                hot_list.append(item["data"]["title"])
+            after = response.json()["data"]["after"]
+            return recurse(subreddit, hot_list, after) if after else hot_list
+        else:
+            return None
     else:
         return None
