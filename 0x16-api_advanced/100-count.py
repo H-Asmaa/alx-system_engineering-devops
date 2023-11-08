@@ -12,7 +12,7 @@ def count_words(subreddit, word_list, dictionary={}, after=None):
     a sorted count of given keywords (case-insensitive,
     delimited by spaces."""
     if not subreddit or not isinstance(subreddit, str):
-        print()
+        return
     params = {"after": after} if after else {}
     response = requests.get(
         "https://www.reddit.com/r/{}/hot.json".format(subreddit),
@@ -45,4 +45,5 @@ def count_words(subreddit, word_list, dictionary={}, after=None):
                                                                  item[0]))
                 )
                 for key, val in sortedDict.items():
-                    print("{}: {}".format(key, val))
+                    if val > 0:
+                        print("{}: {}".format(key, val))
