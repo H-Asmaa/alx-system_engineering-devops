@@ -6,31 +6,29 @@
 import requests
 
 
-def recurse(subreddit):
-    """The main function that is used to call the helper."""
-    hot_list = []
+def recurse(subreddit, hot_list=[], after=None):
+    """A recursive function that queries the Reddit
+    API and returns a list containing the titles of all
+    hot articles for a given subreddit. If no results
+    are found for the given subreddit, the function should
+    return None."""
     if not subreddit or not isinstance(subreddit, str):
         return None
+    params = {"after": after} if after else {}
+    response = requests.get(
+        "https://www.reddit.com/r/{}/hot.json".format(subreddit),
+        headers={"User-Agent": "costum"},
+        params=params,
+    )
 
-    def recurse_helper(subreddit, after=None):
-        """A recursive function that returns a list of all hot
-        post's titles for a given subreddit."""
-        nonlocal hot_list
-        params = {"after": after} if after else {}
-        response = requests.get(
-            "https://reddit.com/r/{}/hot.json".format(subreddit),
-            headers={"User-Agent": "custom"},
-            params=params,
-            allow_redirects=F,
-        )
-        if response.status_code == 200:
-            for item in response.json()["data"]["children"]:
+    if response.status_code == 200:
+        if response.json()["data"]:
+            data = response.json()["data"]
+            for item in data["children"]:
                 hot_list.append(item["data"]["title"])
-            after = response.json()["data"]["after"]
-            if after:
-                recurse_helper(subreddit, after)
-        else:
-            return None
-
-    recurse_helper(subreddit)
-    return hot_list if hot_list else None
+            if data["after"]:
+                return recurse(subreddit, hot_list, after=data["after"])
+            else:
+                return hot_list
+    else:
+        return None
