@@ -11,6 +11,7 @@ def recurse(subreddit):
     hot_list = []
     if not subreddit or not isinstance(subreddit, str):
         return None
+
     def recurse_helper(subreddit, after=None):
         """A recursive function that returns a list of all hot
         post's titles for a given subreddit."""
@@ -20,7 +21,7 @@ def recurse(subreddit):
             "https://reddit.com/r/{}/hot.json".format(subreddit),
             headers={"User-Agent": "custom"},
             params=params,
-            allow_redirects=F
+            allow_redirects=F,
         )
         if response.status_code == 200:
             for item in response.json()["data"]["children"]:
